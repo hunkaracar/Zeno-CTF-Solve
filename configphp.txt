@@ -1,0 +1,10 @@
+bash-4.2$ cat config.php
+cat config.php
+<?php
+    define('DB_HOST', 'localhost');
+    define('DB_USER', 'root');
+    define('DB_PASSWORD', 'veerUffIrangUfcubyig');
+    define('DB_DATABASE', 'dbrms');
+    define('APP_NAME', 'Pathfinder Hotel');
+    error_reporting(1);
+?>

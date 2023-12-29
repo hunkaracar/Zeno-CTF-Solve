@@ -1,0 +1,16 @@
+╔══════════╣ Permissions in init, init.d, systemd, and rc.d
+╚ https://book.hacktricks.xyz/linux-hardening/privilege-escalation#init-init-d-systemd-and-rc-d                               
+You have write privileges over /etc/systemd/system/zeno-monitoring.service                                                    
+
+═╣ Hashes inside passwd file? ........... No
+═╣ Writable passwd file? ................ No                                                                                  
+═╣ Credentials in fstab/mtab? ........... /etc/fstab:#//10.10.10.10/secret-share        /mnt/secret-share       cifs    _netdev,vers=3.0,ro,username=zeno,password=FrobjoodAdkoonceanJa,domain=localdomain,soft       0 0                                   
+═╣ Can I read shadow files? ............. No
+═╣ Can I read shadow plists? ............ No                                                                                  
+═╣ Can I write shadow plists? ........... No                                                                                  
+═╣ Can I read opasswd file? ............. No                                                                                  
+═╣ Can I write in network-scripts? ...... No                                                                                  
+═╣ Can I read root folder? .............. No        
+
+
+password >> FrobjoodAdkoonceanJa

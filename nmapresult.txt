@@ -1,0 +1,96 @@
+nmap 10.10.92.42 -sV -A --data-length 45 -Pn -vv           
+Starting Nmap 7.94 ( https://nmap.org ) at 2023-12-29 07:06 EST
+NSE: Loaded 156 scripts for scanning.
+NSE: Script Pre-scanning.
+NSE: Starting runlevel 1 (of 3) scan.
+Initiating NSE at 07:06
+Completed NSE at 07:06, 0.00s elapsed
+NSE: Starting runlevel 2 (of 3) scan.
+Initiating NSE at 07:06
+Completed NSE at 07:06, 0.00s elapsed
+NSE: Starting runlevel 3 (of 3) scan.
+Initiating NSE at 07:06
+Completed NSE at 07:06, 0.00s elapsed
+Initiating Parallel DNS resolution of 1 host. at 07:06
+Completed Parallel DNS resolution of 1 host. at 07:06, 0.01s elapsed
+Initiating SYN Stealth Scan at 07:06
+Scanning 10.10.92.42 [1000 ports]
+Discovered open port 22/tcp on 10.10.92.42
+Completed SYN Stealth Scan at 07:06, 5.87s elapsed (1000 total ports)
+Initiating Service scan at 07:06
+Scanning 1 service on 10.10.92.42
+Completed Service scan at 07:07, 0.49s elapsed (1 service on 1 host)
+Initiating OS detection (try #1) against 10.10.92.42
+Retrying OS detection (try #2) against 10.10.92.42
+Initiating Traceroute at 07:07
+Completed Traceroute at 07:07, 0.10s elapsed
+Initiating Parallel DNS resolution of 2 hosts. at 07:07
+Completed Parallel DNS resolution of 2 hosts. at 07:07, 0.02s elapsed
+NSE: Script scanning 10.10.92.42.
+NSE: Starting runlevel 1 (of 3) scan.
+Initiating NSE at 07:07
+Completed NSE at 07:07, 3.27s elapsed
+NSE: Starting runlevel 2 (of 3) scan.
+Initiating NSE at 07:07
+Completed NSE at 07:07, 0.00s elapsed
+NSE: Starting runlevel 3 (of 3) scan.
+Initiating NSE at 07:07
+Completed NSE at 07:07, 0.00s elapsed
+Nmap scan report for 10.10.92.42
+Host is up, received user-set (0.084s latency).
+Scanned at 2023-12-29 07:06:53 EST for 14s
+Not shown: 988 filtered tcp ports (no-response), 11 filtered tcp ports (host-prohibited)
+PORT   STATE SERVICE REASON         VERSION
+22/tcp open  ssh     syn-ack ttl 63 OpenSSH 7.4 (protocol 2.0)
+| ssh-hostkey: 
+|   2048 09:23:62:a2:18:62:83:69:04:40:62:32:97:ff:3c:cd (RSA)
+| ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDakZyfnq0JzwuM1SD3YZ4zyizbtc9AOvhk2qCaTwJHEKyyqIjBaElNv4LpSdtV7y/C6vwUfPS34IO/mAmNtAFquBDjIuoKdw9TjjPrVBVjzFxD/9tDSe+cu6ELPHMyWOQFAYtg1CV1TQlm3p6WIID2IfYBffpfSz54wRhkTJd/+9wgYdOwfe+VRuzV8EgKq4D2cbUTjYjl0dv2f2Th8WtiRksEeaqI1fvPvk6RwyiLdV5mSD/h8HCTZgYVvrjPShW9XPE/wws82/wmVFtOPfY7WAMhtx5kiPB11H+tZSAV/xpEjXQQ9V3Pi6o4vZdUvYSbNuiN4HI4gAWnp/uqPsoR
+|   256 33:66:35:36:b0:68:06:32:c1:8a:f6:01:bc:43:38:ce (ECDSA)
+| ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBEMyTtxVAKcLy5u87ws+h8WY+GHWg8IZI4c11KX7bOSt85IgCxox7YzOCZbUA56QOlryozIFyhzcwOeCKWtzEsA=
+|   256 14:98:e3:84:70:55:e6:60:0c:c2:09:77:f8:b7:a6:1c (ED25519)
+|_ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOKY0jLSRkYg0+fTDrwGOaGW442T5k1qBt7l8iAkcuCk
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: general purpose|specialized|storage-misc
+Running (JUST GUESSING): Linux 3.X|5.X (90%), Crestron 2-Series (86%), HP embedded (85%)
+OS CPE: cpe:/o:linux:linux_kernel:3 cpe:/o:linux:linux_kernel:5.4 cpe:/o:crestron:2_series cpe:/h:hp:p2000_g3
+OS fingerprint not ideal because: Missing a closed TCP port so results incomplete
+Aggressive OS guesses: Linux 3.10 - 3.13 (90%), Linux 5.4 (89%), Crestron XPanel control system (86%), HP P2000 G3 NAS device (85%)
+No exact OS matches for host (test conditions non-ideal).
+TCP/IP fingerprint:
+SCAN(V=7.94%E=4%D=12/29%OT=22%CT=%CU=%PV=Y%DS=2%DC=T%G=N%TM=658EB66B%P=x86_64-pc-linux-gnu)
+SEQ(SP=105%GCD=1%ISR=108%TI=Z%TS=A)
+SEQ(SP=105%GCD=1%ISR=108%TI=Z%II=I%TS=A)
+OPS(O1=M508ST11NW6%O2=M508ST11NW6%O3=M508NNT11NW6%O4=M508ST11NW6%O5=M508ST11NW6%O6=M508ST11)
+WIN(W1=68DF%W2=68DF%W3=68DF%W4=68DF%W5=68DF%W6=68DF)
+ECN(R=Y%DF=Y%TG=40%W=6903%O=M508NNSNW6%CC=Y%Q=)
+T1(R=Y%DF=Y%TG=40%S=O%A=S+%F=AS%RD=0%Q=)
+T2(R=N)
+T3(R=N)
+T4(R=Y%DF=Y%TG=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)
+U1(R=N)
+IE(R=Y%DFI=N%TG=40%CD=S)
+
+Uptime guess: 0.000 days (since Fri Dec 29 07:06:33 2023)
+Network Distance: 2 hops
+TCP Sequence Prediction: Difficulty=261 (Good luck!)
+IP ID Sequence Generation: All zeros
+
+TRACEROUTE (using port 22/tcp)
+HOP RTT      ADDRESS
+1   89.44 ms 10.8.0.1
+2   89.36 ms 10.10.92.42
+
+NSE: Script Post-scanning.
+NSE: Starting runlevel 1 (of 3) scan.
+Initiating NSE at 07:07
+Completed NSE at 07:07, 0.00s elapsed
+NSE: Starting runlevel 2 (of 3) scan.
+Initiating NSE at 07:07
+Completed NSE at 07:07, 0.00s elapsed
+NSE: Starting runlevel 3 (of 3) scan.
+Initiating NSE at 07:07
+Completed NSE at 07:07, 0.00s elapsed
+Read data files from: /usr/bin/../share/nmap
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 14.51 seconds
+           Raw packets sent: 2079 (185.895KB) | Rcvd: 59 (5.674KB)

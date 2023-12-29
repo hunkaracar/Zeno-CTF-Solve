@@ -1,0 +1,2 @@
+bash_root-4.2# cat root.txt
+THM{b187ce4b85232599ca72708ebde71791}

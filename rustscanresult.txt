@@ -1,0 +1,53 @@
+rustscan 10.10.92.42 -- -sV --data-length 54 -n        
+.----. .-. .-. .----..---.  .----. .---.   .--.  .-. .-.
+| {}  }| { } |{ {__ {_   _}{ {__  /  ___} / {} \ |  `| |
+| .-. \| {_} |.-._} } | |  .-._} }\     }/  /\  \| |\  |
+`-' `-'`-----'`----'  `-'  `----'  `---' `-'  `-'`-' `-'
+Faster Nmap scanning with Rust.
+________________________________________
+: https://discord.gg/GFrQsGy           :
+: https://github.com/RustScan/RustScan :
+ --------------------------------------
+Please contribute more quotes to our GitHub https://github.com/rustscan/rustscan
+
+[~] The config file is expected to be at "/root/.rustscan.toml"
+[!] File limit is lower than default batch size. Consider upping with --ulimit. May cause harm to sensitive servers
+[!] Your file limit is very small, which negatively impacts RustScan's speed. Use the Docker image, or up the Ulimit with '--ulimit 5000'. 
+Open 10.10.92.42:22
+Open 10.10.92.42:12340
+[~] Starting Nmap
+[>] The Nmap command to be run is nmap -sV --data-length 54 -n -vvv -p 22,12340 10.10.92.42
+
+Starting Nmap 7.94 ( https://nmap.org ) at 2023-12-29 07:12 EST
+NSE: Loaded 46 scripts for scanning.
+Initiating Ping Scan at 07:12
+Scanning 10.10.92.42 [4 ports]
+Completed Ping Scan at 07:12, 0.11s elapsed (1 total hosts)
+Initiating SYN Stealth Scan at 07:12
+Scanning 10.10.92.42 [2 ports]
+Discovered open port 22/tcp on 10.10.92.42
+Discovered open port 12340/tcp on 10.10.92.42
+Completed SYN Stealth Scan at 07:12, 0.12s elapsed (2 total ports)
+Initiating Service scan at 07:12
+Scanning 2 services on 10.10.92.42
+Completed Service scan at 07:12, 11.46s elapsed (2 services on 1 host)
+NSE: Script scanning 10.10.92.42.
+NSE: Starting runlevel 1 (of 2) scan.
+Initiating NSE at 07:12
+Completed NSE at 07:12, 0.43s elapsed
+NSE: Starting runlevel 2 (of 2) scan.
+Initiating NSE at 07:12
+Completed NSE at 07:12, 0.35s elapsed
+Nmap scan report for 10.10.92.42
+Host is up, received echo-reply ttl 63 (0.085s latency).
+Scanned at 2023-12-29 07:12:30 EST for 13s
+
+PORT      STATE SERVICE REASON         VERSION
+22/tcp    open  ssh     syn-ack ttl 63 OpenSSH 7.4 (protocol 2.0)
+12340/tcp open  http    syn-ack ttl 63 Apache httpd 2.4.6 ((CentOS) PHP/5.4.16)
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 12.85 seconds
+           Raw packets sent: 6 (564B) | Rcvd: 3 (170B)
+
